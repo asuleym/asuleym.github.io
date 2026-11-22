@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arzu Su</title>
-<meta name="description" content="Arzu Su: research on large language models, human-AI trust and clinical AI. Graduate Research Assistant at Kent State University.">
-<meta property="og:title" content="Arzu Su">
-<meta property="og:description" content="Research on large language models, human-AI trust and clinical AI.">
+<title>Arzu Suleymanova</title>
+<meta name="description" content="Arzu Suleymanova: research on human-AI interaction, trust and privacy in conversational AI. Research Assistant at Kent State University.">
+<meta property="og:title" content="Arzu Suleymanova">
+<meta property="og:description" content="Research on human-AI interaction, trust and privacy in conversational AI.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b509ac'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +15,9 @@
 <style>
 /* VOICE: a quiet academic homepage; whitespace first, one accent, nothing shouting
    IDEA: the front sheet of a printed CV or faculty page
-   PICTURE: the portrait card beside the bio, then small drawn project plates
+   PICTURE: the portrait beside the bio, then small drawn project plates
    COLOUR and TYPE: white and near-black, magenta accent (teal at night); Roboto with light-weight titles
-   LAYOUT: slim sticky navbar, one 880px column, bio wraps the portrait, then news, research, projects, education, contact */
+   LAYOUT: slim sticky navbar, one 880px column, bio wraps the portrait, then news, publications, research, projects, education, contact */
 :root{color-scheme:light dark;
   --bg:light-dark(#ffffff,#1c1c1d);--ink:light-dark(#1a1a1a,#e8e8e8);--mute:light-dark(#646464,#a6a6a6);
   --line:light-dark(#e7e7e7,#353538);--soft:light-dark(#f6f5f7,#262628);--accent:light-dark(#b509ac,#2698ba);
@@ -30,25 +30,26 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 .wrap{max-width:880px;margin:0 auto;padding:0 max(4vw,18px)}
+[hidden]{display:none!important}
 
 /* navbar */
 .nav{position:sticky;top:0;z-index:10;background:var(--nav);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:4px;min-height:58px}
-.brand{font-size:1.2rem;font-weight:300;color:var(--ink);margin-right:auto;white-space:nowrap}
+.brand{font-size:1.15rem;font-weight:300;color:var(--ink);margin-right:auto;white-space:nowrap}
 .brand b{font-weight:700}
 .brand:hover{text-decoration:none;color:var(--accent)}
 .links{display:flex;list-style:none;margin:0;padding:0}
-.links a{display:block;padding:10px 11px;color:var(--ink);font-size:.97rem;border-radius:6px}
+.links a{display:block;padding:10px 9px;color:var(--ink);font-size:.95rem;border-radius:6px;white-space:nowrap}
 .links a:hover{color:var(--accent);text-decoration:none}
 .links a.on{color:var(--accent);font-weight:500}
-.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:0;background:none;color:var(--ink);border-radius:50%;cursor:pointer}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:0;background:none;color:var(--ink);border-radius:50%;cursor:pointer;flex:none}
 .icon-btn:hover{color:var(--accent);background:var(--soft)}
 .icon-btn svg{width:20px;height:20px}
 .menu{display:none}
 .i-sun{display:none}
 :root[data-theme=dark] .i-sun{display:block}:root[data-theme=dark] .i-moon{display:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .i-sun{display:block}:root:not([data-theme=light]) .i-moon{display:none}}
-@media (max-width:720px){
+@media (max-width:880px){
   .menu{display:grid}
   .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:4px max(4vw,18px) 12px}
   .links.open{display:flex}
@@ -57,7 +58,7 @@ a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* header + about */
 .hero{padding:clamp(34px,6vw,60px) 0 0}
-h1{font-weight:300;font-size:clamp(2.2rem,5.6vw,2.9rem);line-height:1.08;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1{font-weight:300;font-size:clamp(2.1rem,5.4vw,2.9rem);line-height:1.08;margin:0;letter-spacing:-.01em;text-wrap:balance}
 h1 b{font-weight:700}
 .desc{color:var(--mute);margin:.55rem 0 0;font-size:1rem}
 .about{display:flow-root;padding:24px 0 4px}
@@ -66,7 +67,7 @@ h1 b{font-weight:700}
 .profile{float:right;width:min(32%,250px);margin:6px 0 18px 34px;text-align:center}
 .pic{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--soft);box-shadow:0 1px 2px rgb(0 0 0 / .08),0 10px 26px -10px rgb(0 0 0 / .32)}
 .pic svg,.pic img{position:absolute;inset:0;width:100%;height:100%}
-.pic img{object-fit:cover;opacity:0;transition:opacity .4s}
+.pic img{object-fit:cover;object-position:50% 35%;opacity:0;transition:opacity .4s}
 .pic img.ok{opacity:1}
 .cap{font-size:.86rem;color:var(--mute);margin-top:10px;line-height:1.5}
 .chips{list-style:none;margin:0 0 1em;padding:0}
@@ -76,7 +77,7 @@ h1 b{font-weight:700}
 /* sections */
 section{padding:30px 0 6px}
 h2{font-size:1.5rem;font-weight:400;color:var(--accent);margin:0 0 14px}
-h2 + h3,.sub-h{font-size:1.08rem;font-weight:500;margin:26px 0 8px}
+.sub-h{font-size:1.08rem;font-weight:500;margin:26px 0 8px}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;padding:11px 0;border-top:1px solid var(--line)}
 .rows li:last-child{border-bottom:1px solid var(--line)}
@@ -84,31 +85,38 @@ h2 + h3,.sub-h{font-size:1.08rem;font-weight:500;margin:26px 0 8px}
 .rows small{display:block;color:var(--mute);font-size:.93rem;line-height:1.5;margin-top:2px}
 @media (max-width:520px){.rows li{grid-template-columns:1fr;gap:2px}}
 
-.entry{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.entry{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+.entry:last-of-type{border-bottom:1px solid var(--line)}
 .abbr{align-self:start;text-align:center;padding:4px 6px;border-radius:4px;background:var(--accent);color:var(--on-accent);font-size:.8rem;font-weight:500;white-space:nowrap}
-.entry .t{font-weight:500;margin:0;line-height:1.45;font-size:1.05rem}
+.entry .t{font-weight:500;margin:0;line-height:1.45;font-size:1.03rem}
+.entry .au{margin:3px 0 0;font-size:.95rem}
+.au b{font-weight:500;text-decoration:underline;text-underline-offset:3px}
 .entry .meta{margin:3px 0 0;font-size:.95rem;font-style:italic;color:var(--mute)}
 .entry p.d{margin:10px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;font:500 .82rem/1 Roboto,system-ui,sans-serif;border:1px solid var(--line);border-radius:6px;color:var(--ink)}
+.btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .tags span{font-size:.8rem;padding:2px 9px;border-radius:99px;background:var(--soft);color:var(--mute);white-space:nowrap}
 @media (max-width:520px){.entry{grid-template-columns:1fr;gap:8px}.abbr{justify-self:start;min-width:84px}}
 
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
 .card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;color:var(--ink);background:var(--bg);transition:transform .2s,box-shadow .2s}
 a.card:hover{text-decoration:none;transform:translateY(-3px);box-shadow:0 12px 30px -14px rgb(0 0 0 / .35)}
 .card svg{display:block;width:100%;height:auto;aspect-ratio:16/9}
 .card .body{flex:1;display:flex;flex-direction:column;padding:14px 16px 16px;border-top:1px solid var(--line)}
 .card h3{margin:0 0 2px;font-size:1.06rem;font-weight:500}
 .card .where{margin:0 0 8px;font-size:.86rem;color:var(--mute)}
-.nw{white-space:nowrap}
 .card p{margin:0 0 12px;color:var(--mute);font-size:.95rem;line-height:1.5}
 .card .tags{margin-top:auto}
+.nw{white-space:nowrap}
 
-.skills{margin:18px 0 0;font-size:.97rem}
+.skills{margin:16px 0 0;font-size:.97rem}
 .skills b{font-weight:500}
 
 .contact{text-align:center;padding:40px 0 10px}
 .contact p{margin:0;color:var(--mute)}
+.contact p a{overflow-wrap:anywhere}
 .social{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin:12px 0 6px}
 .social a{width:50px;height:50px;display:grid;place-items:center;color:var(--ink);border-radius:50%}
 .social a:hover{color:var(--accent);background:var(--soft)}
@@ -121,14 +129,15 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
 
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="brand" href="#about"><b>Arzu</b> Su</a>
+    <a class="brand" href="#about"><b>Arzu</b> Suleymanova</a>
     <ul class="links" id="links">
       <li><a href="#about">About</a></li>
       <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
-      <li id="cv-link" hidden><a href="cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      <li data-cv hidden><a href="cv.pdf" target="_blank" rel="noopener">CV</a></li>
     </ul>
     <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
       <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -143,8 +152,8 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
 <main class="wrap">
   <div id="about">
     <header class="hero">
-      <h1><b>Arzu</b> Su</h1>
-      <p class="desc">Graduate Research Assistant, Kent State University</p>
+      <h1><b>Arzu</b> Suleymanova</h1>
+      <p class="desc">Research Assistant, Kent State University</p>
     </header>
 
     <div class="about">
@@ -153,45 +162,75 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
           <svg viewBox="0 0 200 250" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
             <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.26"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:.05"/></linearGradient></defs>
             <rect width="200" height="250" fill="url(#mg)"/>
-            <g fill="none" style="stroke:var(--accent)" stroke-opacity=".2" stroke-width="1.5"><circle cx="170" cy="30" r="55"/><circle cx="170" cy="30" r="85"/><circle cx="170" cy="30" r="115"/><circle cx="170" cy="30" r="145"/></g>
-            <text x="100" y="154" text-anchor="middle" font-family="Roboto, sans-serif" font-weight="300" font-size="76" style="fill:var(--accent)">AS</text>
+            <text x="100" y="152" text-anchor="middle" font-family="Roboto, sans-serif" font-weight="300" font-size="76" style="fill:var(--accent)">AS</text>
           </svg>
-          <!-- Upload a photo named profile.jpg next to this file and it replaces the initials automatically. -->
-          <img id="photo" src="profile.jpg" alt="Portrait of Arzu Su">
+          <!-- The photo is the file profile.jpg in this repository. Upload a new profile.jpg to change it. -->
+          <img id="photo" src="profile.jpg" alt="Portrait of Arzu Suleymanova">
         </div>
         <figcaption class="cap">Kent State University<br><a href="https://github.com/asuleym">@asuleym</a> on GitHub</figcaption>
       </figure>
 
-      <p>Hi, I'm Arzu. I study how people talk to AI systems, and what they leave out. At Kent State University I lead an IRB-approved interview study on self-censorship and AI adoption among English, Azerbaijani and Russian speakers: when and why people change or hold back what they type into a large language model.</p>
-      <p>I care most about what this means for medicine. A clinical decision-support tool can only work with the information it is given, so I want to understand how clinicians and patients decide what to share with AI, and how to build tools they can be honest with. I am applying to PhD programs to keep working on these questions.</p>
+      <p>Hi, I'm Arzu. I study how people use AI systems, and what they choose not to tell them. I'm a research assistant at Kent State University, where I work with Dr. Lala Hajibayova on a qualitative study of privacy perception and self-censorship in human-AI interaction.</p>
+      <p>With Dr. Hajibayova I also study how immigrants and non-native speakers use generative AI, work that was accepted at ASIS&amp;T 2026. Beyond conversational AI, I have built machine learning models of aging biomarkers, and I'm interested in biosignals and in data visualization that helps people understand AI. I am applying to PhD programs to keep working on human-centered AI.</p>
 
       <h3>Research interests</h3>
       <ul class="chips">
-        <li>LLMs and clinical decision support</li>
-        <li>AI and machine learning in medicine and ENT</li>
         <li>Human-computer interaction</li>
-        <li>Algorithmic bias and AI self-censorship</li>
-        <li>Digital biomarkers and biomedical informatics</li>
+        <li>Conversational AI and LLM systems</li>
+        <li>Human-AI and human-robot interaction</li>
+        <li>Trust, privacy and responsible AI</li>
+        <li>Interactive machine learning systems</li>
+        <li>Biosignal analysis and computational neuroscience</li>
+        <li>Longevity and biomarkers of aging</li>
+        <li>Data visualization for human-centered AI</li>
       </ul>
 
       <h3>Before research</h3>
-      <p>I co-founded and lead Savadly, an EdTech company in Baku, and I work part-time as a data analyst at Yieldmo in Boston, labeling text, image and video ad data for machine learning. Since 2024 I have built AI apps with Sundai Club, a group of builders around MIT and Harvard who ship a new project most Sundays.</p>
+      <p>I worked in data and product roles. I'm a part-time data analyst at Yieldmo, and before that I was a technical product manager at the EdTech startup Audo and a business analyst at EtaVista. In 2020 I co-founded Savadly, an online marketplace for live one-to-one lessons and video courses, where I led product design and user research.</p>
 
       <h3>Languages</h3>
-      <p>I trained as a translator and interpreter, and I speak Azerbaijani, English, Russian and Turkish. Moving between languages every day is a large part of why I study how people speak to machines.</p>
+      <p>I studied language interpretation and translation. Azerbaijani is my first language, and I also speak English, Russian and Turkish. Working across languages is a big part of why I care about how people talk to machines.</p>
     </div>
   </div>
 
   <section id="news" aria-labelledby="news-h">
     <h2 id="news-h">News</h2>
     <ul class="rows">
-      <li><span class="when">Nov 2026</span><span>Launched this website.</span></li>
-      <li><span class="when">Feb 2026</span><span>Joined Kent State University as a Graduate Research Assistant, leading a study on self-censorship and AI adoption across three languages.</span></li>
-      <li><span class="when">Jan 2025</span><span>Built <a href="https://github.com/asuleym/Greenlife">GreenLife</a>, an app that turns one idea into a three-panel comic about sustainable living.</span></li>
-      <li><span class="when">Sep 2024</span><span>Built ElevateHealth, a biological-age tracking app, at the MIT CSAIL Longevity Hack and presented it to longevity researchers.</span></li>
-      <li><span class="when">2024</span><span>Teaching assistant for Prof. Rem Koning's AI and innovation workshop at Harvard Business School.</span></li>
-      <li><span class="when">2024</span><span>Finished my M.S. in Information Technology at Southern New Hampshire University.</span></li>
+      <li><span class="when">Nov 2026</span><span>A poster, a workshop paper and a workshop with Dr. Lala Hajibayova at the ASIS&amp;T 2026 Annual Meeting in Bangkok, Thailand.</span></li>
+      <li><span class="when">2026</span><span>Volunteer teaching assistant for a three-day AI product workshop for MBA students at Harvard Business School.</span></li>
+      <li><span class="when">2026</span><span>Earned a certificate in Applied Machine Learning with Python from Stanford University.</span></li>
+      <li><span class="when">Feb 2026</span><span>Joined Kent State University as a research assistant, studying privacy and self-censorship in human-AI interaction.</span></li>
+      <li><span class="when">2025</span><span>Built machine learning models of aging biomarkers at the MIT/Harvard Biomarkers of Aging hackathon.</span></li>
     </ul>
+  </section>
+
+  <section id="publications" aria-labelledby="pubs-h">
+    <h2 id="pubs-h">Publications and presentations</h2>
+    <article class="entry">
+      <span class="abbr">ASIS&amp;T</span>
+      <div>
+        <p class="t">Immigrants' Engagement with AI Platforms: Trustworthy, Inaccurate, or Exploratory?</p>
+        <p class="au">L. Hajibayova, <b>A. Suleymanova</b></p>
+        <p class="meta">Refereed poster &middot; ASIS&amp;T 2026 Annual Meeting, Bangkok, Thailand &middot; <span class="nw">Nov 2026</span></p>
+      </div>
+    </article>
+    <article class="entry">
+      <span class="abbr">SIG-AI</span>
+      <div>
+        <p class="t">GenAI Application by Non-Native Speaker Learners: Exploring, Learning, or Sense-Making?</p>
+        <p class="au">L. Hajibayova, <b>A. Suleymanova</b></p>
+        <p class="meta">Refereed workshop paper &middot; ASIS&amp;T SIG-AI Workshop on Building AI and Navigating AI Regulatory and Policy Landscapes, ASIS&amp;T 2026, Bangkok &middot; <span class="nw">Nov 2026</span></p>
+      </div>
+    </article>
+    <article class="entry">
+      <span class="abbr">Workshop</span>
+      <div>
+        <p class="t">Building AI and Navigating AI Regulatory and Policy Landscapes</p>
+        <p class="au">L. Hajibayova, C. M. Chu, G. Shao, S. Havelka, Y. Li, <b>A. Suleymanova</b></p>
+        <p class="meta">Refereed workshop &middot; ASIS&amp;T 2026 Annual Meeting, Bangkok, Thailand &middot; <span class="nw">Nov 2026</span></p>
+        <div class="btns"><a class="btn" href="https://www.asist.org/am2026/precon4/">Workshop page</a></div>
+      </div>
+    </article>
   </section>
 
   <section id="research" aria-labelledby="research-h">
@@ -199,25 +238,25 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
     <article class="entry">
       <span class="abbr">Kent State</span>
       <div>
-        <p class="t">Self-censorship and AI adoption across languages</p>
-        <p class="meta">Graduate Research Assistant &middot; Feb 2026 to present &middot; IRB-approved, in progress</p>
-        <p class="d">An interview study with English, Azerbaijani and Russian speakers about how they edit, soften or withhold what they tell large language models, and how that shapes trust in AI. I code the multilingual transcripts in NVivo, run thematic analysis, and analyze the quantitative data in R and SAS. I also run the study's consent process, data privacy and participant communication.</p>
-        <div class="tags"><span>Interviews</span><span>Thematic analysis</span><span>NVivo</span><span>R</span><span>SAS</span></div>
+        <p class="t">Privacy perception and self-censorship in human-AI interaction</p>
+        <p class="meta">Research Assistant &middot; Feb 2026 to present &middot; Supervisor: Dr. Lala Hajibayova</p>
+        <p class="d">A qualitative study of 39 Eurasian-origin postgraduate and postdoctoral researchers based in the US, EU and UK. I lead participant recruitment, built the Qualtrics survey, run the semi-structured interviews, and transcribe, code and analyze the data in Python. I also work on the literature review.</p>
+        <div class="tags"><span>Qualitative research</span><span>Interviews</span><span>Qualtrics</span><span>Thematic analysis</span><span>Python</span></div>
       </div>
     </article>
 
-    <h3 class="sub-h">Teaching and mentoring</h3>
+    <h3 class="sub-h">Teaching and volunteering</h3>
     <ul class="rows">
-      <li><span class="when">2024</span><span>Teaching assistant, AI and Innovation Workshop, Harvard Business School<small>With Prof. Rem Koning. Helped participants use agentic coding tools to prototype AI products.</small></span></li>
-      <li><span class="when">2024</span><span>AI and research mentor, C10Labs / LabCentral AI BioHub<small>Advised HeraHealth, a startup building an AI device that measures blood loss during childbirth, on data strategy and model design.</small></span></li>
-      <li><span class="when">2024 to now</span><span>Member and builder, Sundai Club<small>An AI builder community around MIT and Harvard.</small></span></li>
+      <li><span class="when">2026</span><span>Teaching assistant (volunteer), Harvard Business School<small>Three-day workshop for MBA students on building products and coding with AI, with Prof. Rem Koning and Thomas Baker. I helped participants one-on-one with AI-assisted coding tools and prototyping.</small></span></li>
+      <li><span class="when">2025 to now</span><span>Volunteer, GDG Boston/Lawrence<small>Google Developer Groups chapter.</small></span></li>
+      <li><span class="when">2024 to now</span><span>Volunteer, Sundai | MIT<small>AI builder community at MIT.</small></span></li>
     </ul>
   </section>
 
   <section id="projects" aria-labelledby="projects-h">
     <h2 id="projects-h">Projects</h2>
     <div class="projects">
-      <a class="card" href="https://github.com/AdamElitzur/ElevateHealth">
+      <article class="card">
         <svg viewBox="0 0 320 180" role="img" aria-label="Chart of biological age dropping below calendar age over time">
           <rect width="320" height="180" style="fill:light-dark(#e7f0fb,#1a2532)"/>
           <rect x="24" y="20" width="272" height="140" rx="10" style="fill:light-dark(#ffffff,#22303f)"/>
@@ -231,27 +270,30 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
           <g transform="translate(110 40)"><circle r="10" fill="#e3f5ea"/><ellipse rx="3.6" ry="6.2" transform="rotate(35)" fill="#30a46c"/></g>
         </svg>
         <div class="body">
-          <h3>ElevateHealth</h3>
-          <p class="where">MIT CSAIL Longevity Hack &middot; <span class="nw">Sep 2024</span></p>
-          <p>Estimates biological age from daily nutrition, sleep and activity data with machine learning models, and shows how habits move that number over time.</p>
-          <div class="tags"><span>Machine learning</span><span>Health data</span><span>Full-stack</span></div>
+          <h3>Biomarkers of Aging</h3>
+          <p class="where">MIT/Harvard Hackathon &middot; <span class="nw">2025</span></p>
+          <p>Predictive machine learning models of aging biomarkers built from multimodal data: proteomics, genomics, digital health, sleep and nutrition. I designed interactive Tableau dashboards and worked with MIT and Harvard clinicians and researchers on survival analysis and clinical relevance.</p>
+          <div class="tags"><span>Machine learning</span><span>Survival analysis</span><span>Tableau</span></div>
         </div>
-      </a>
+      </article>
       <article class="card">
-        <svg viewBox="0 0 320 180" role="img" aria-label="Points grouped into three clusters around a query point">
-          <rect width="320" height="180" style="fill:light-dark(#f1eefa,#221e2d)"/>
-          <circle cx="90" cy="68" r="42" fill="#7c5cff" opacity=".13"/><circle cx="222" cy="60" r="38" fill="#00a6a6" opacity=".15"/><circle cx="168" cy="134" r="36" fill="#f08c00" opacity=".15"/>
-          <g style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"><path d="M160 92L110 72M160 92L156 122M160 92L204 50"/></g>
-          <g fill="#7c5cff"><circle cx="70" cy="58" r="4.5"/><circle cx="84" cy="46" r="4.5"/><circle cx="100" cy="54" r="4.5"/><circle cx="110" cy="72" r="4.5"/><circle cx="92" cy="82" r="4.5"/><circle cx="76" cy="80" r="4.5"/><circle cx="96" cy="66" r="4.5"/><circle cx="62" cy="70" r="4.5"/></g>
-          <g fill="#00a6a6"><circle cx="204" cy="50" r="4.5"/><circle cx="222" cy="42" r="4.5"/><circle cx="238" cy="54" r="4.5"/><circle cx="232" cy="74" r="4.5"/><circle cx="212" cy="70" r="4.5"/><circle cx="222" cy="58" r="4.5"/><circle cx="246" cy="68" r="4.5"/></g>
-          <g fill="#f08c00"><circle cx="156" cy="122" r="4.5"/><circle cx="172" cy="116" r="4.5"/><circle cx="186" cy="128" r="4.5"/><circle cx="178" cy="146" r="4.5"/><circle cx="160" cy="144" r="4.5"/><circle cx="168" cy="132" r="4.5"/><circle cx="148" cy="134" r="4.5"/></g>
-          <path d="M160 83L169 92L160 101L151 92Z" style="fill:var(--ink)"/>
+        <svg viewBox="0 0 320 180" role="img" aria-label="A user profile sent to a cloud model that answers quickly">
+          <rect width="320" height="180" style="fill:light-dark(#eef0ff,#1e2134)"/>
+          <rect x="26" y="28" width="124" height="124" rx="10" fill="#fff" stroke="#c9ccf5" stroke-width="1.5"/>
+          <circle cx="56" cy="60" r="15" fill="#e0e1fb"/><circle cx="56" cy="56" r="5.5" fill="#4f46e5"/><path d="M46 70a10 8 0 0 1 20 0z" fill="#4f46e5"/>
+          <rect x="80" y="52" width="54" height="6" rx="3" fill="#c7c9f2"/><rect x="80" y="64" width="38" height="6" rx="3" fill="#e0e1fb"/>
+          <g fill="#eef0ff"><rect x="40" y="94" width="94" height="8" rx="4"/><rect x="40" y="110" width="94" height="8" rx="4"/><rect x="40" y="126" width="94" height="8" rx="4"/></g>
+          <g fill="#4f46e5"><rect x="40" y="94" width="70" height="8" rx="4"/><rect x="40" y="110" width="44" height="8" rx="4" opacity=".7"/><rect x="40" y="126" width="82" height="8" rx="4" opacity=".45"/></g>
+          <path d="M160 90H194" stroke="#4f46e5" stroke-width="2.5" stroke-dasharray="4 4"/><path d="M194 84l9 6-9 6z" fill="#4f46e5"/>
+          <g fill="#fff"><circle cx="234" cy="84" r="20"/><circle cx="258" cy="76" r="25"/><circle cx="281" cy="88" r="16"/><rect x="216" y="86" width="82" height="22" rx="11"/></g>
+          <path d="M248 88l-7 7 7 7M268 88l7 7-7 7M261 85l-6 20" stroke="#4f46e5" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M262 120l-11 17h8l-4 15 13-19h-8l5-13z" fill="#f59f00"/>
         </svg>
         <div class="body">
-          <h3>Mantis AI</h3>
-          <p class="where">Sundai Club, MIT &middot; <span class="nw">2024</span></p>
-          <p>Groups text, graph and sequence data with semantic embeddings and clustering, then answers questions over it with retrieval-augmented generation and vector search.</p>
-          <div class="tags"><span>Embeddings</span><span>Clustering</span><span>RAG</span></div>
+          <h3>AI-Powered User Modeling Prototype</h3>
+          <p class="where">MIT &middot; <span class="nw">2025</span></p>
+          <p>A full-stack prototype with a Next.js front end and a Python machine learning back end, deployed on Google Cloud for real-time inference with about 30% lower latency. The focus was interactive machine learning systems and user behavior modeling.</p>
+          <div class="tags"><span>Next.js</span><span>Python</span><span>Google Cloud</span></div>
         </div>
       </article>
       <a class="card" href="https://github.com/asuleym/Greenlife">
@@ -276,36 +318,55 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
           <div class="tags"><span>Next.js</span><span>TypeScript</span><span>GPT-4o</span><span>Replicate</span></div>
         </div>
       </a>
+      <article class="card">
+        <svg viewBox="0 0 320 180" role="img" aria-label="A house next to an energy forecast that widens into the future">
+          <rect width="320" height="180" style="fill:light-dark(#fff5e5,#2a2316)"/>
+          <path d="M36 96L70 68L104 96V146H36Z" fill="#fff" stroke="#8a5a1f" stroke-width="2.5" stroke-linejoin="round"/>
+          <rect x="62" y="118" width="16" height="28" rx="2" fill="#f3e3c8"/>
+          <rect x="48" y="100" width="18" height="14" rx="2" fill="#fff4d6" stroke="#8a5a1f" stroke-width="1.5"/>
+          <path d="M84 98l-6 10h5l-3 9 9-12h-5l3-7z" fill="#f59f00"/>
+          <path d="M126 40V146H298" style="stroke:light-dark(#d9c7a6,#5a4a2e)" stroke-width="1.5" fill="none"/>
+          <path d="M210 100L292 56L292 114Z" fill="#f59f00" opacity=".18"/>
+          <path d="M210 100L292 72L292 98Z" fill="#f59f00" opacity=".32"/>
+          <path d="M132 124L148 116L162 121L176 108L192 113L210 100" style="stroke:light-dark(#8a5a1f,#e9c48a)" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+          <path d="M210 100L292 85" stroke="#f08c00" stroke-width="2.5" stroke-dasharray="5 5"/>
+          <circle cx="210" cy="100" r="4.5" fill="#f08c00"/>
+        </svg>
+        <div class="body">
+          <h3>Smart Home Energy Forecasting</h3>
+          <p class="where">Southern New Hampshire University &middot; <span class="nw">2023</span></p>
+          <p>Monte Carlo simulation and linear regression on open time-series energy data, with long-term forecasts that projected a 20% improvement in profit margin at 95% confidence.</p>
+          <div class="tags"><span>Monte Carlo</span><span>Regression</span><span>Time series</span></div>
+        </div>
+      </article>
     </div>
   </section>
 
   <section id="education" aria-labelledby="education-h">
     <h2 id="education-h">Education</h2>
     <ul class="rows">
-      <li><span class="when">2024</span><span>M.S., Information Technology, Southern New Hampshire University<small>Concentration in Computer and Information Science</small></span></li>
-      <li><span class="when">2022</span><span>Graduate Certificate, Illinois State University<small>Project Management in Technology and System Quality Analytics</small></span></li>
-      <li><span class="when">2014</span><span>B.S., Translator-Interpreter, Odlar Yurdu University, Baku</span></li>
+      <li><span class="when">2023&ndash;2024</span><span>M.S., Information and Computer Technologies, Southern New Hampshire University<small>Manchester, NH</small></span></li>
+      <li><span class="when">2021&ndash;2022</span><span>Project Management in Technology and Quality Analytics, Illinois State University<small>MS program, 21 credits &middot; Bloomington-Normal, IL</small></span></li>
+      <li><span class="when">2010&ndash;2014</span><span>B.S., Language Interpretation and Translation, Odlar Yurdu University<small>Baku, Azerbaijan</small></span></li>
     </ul>
-    <p class="skills"><b>Skills:</b> Python, R, SAS, SQL, JavaScript (Next.js) &middot; NVivo, Tableau, Power BI &middot; GCP, AWS Certified Cloud Practitioner &middot; Certified Scrum Product Owner</p>
+    <p class="skills"><b>Skills:</b> Python, SQL, JavaScript (Next.js), Git &middot; Google Cloud Platform &middot; Tableau, Excel/Sheets &middot; Qualtrics, Zotero, Figma, Miro &middot; qualitative coding and thematic analysis</p>
+    <p class="skills"><b>Certificates:</b> Applied Machine Learning with Python, Stanford University (2026) &middot; Google Cloud Digital Leader (2025) &middot; Certified Scrum Product Owner (2024) &middot; Programming in Python, University of Michigan (2023)</p>
   </section>
 
   <section class="contact" id="contact" aria-labelledby="contact-h">
     <h2 id="contact-h">Get in touch</h2>
-    <p>I'm happy to talk about research, collaborations and PhD programs.</p>
+    <p>I'm happy to talk about research, collaborations and PhD programs. Email me at <a href="mailto:arzu.suleymanovaa@gmail.com">arzu.suleymanovaa@gmail.com</a></p>
     <div class="social">
-      <!-- Email: put your address in BOTH places below and remove the comment marks around the line.
-      <a href="mailto:you@example.com" aria-label="Email you@example.com" title="you@example.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
-      -->
+      <a href="mailto:arzu.suleymanovaa@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+      <a href="https://www.linkedin.com/in/arzusuleymanova/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="8" r="1.3" fill="currentColor"/><path d="M8 11v6M12 17v-6M12 13.5c0-1.5 1-2.5 2.4-2.5S16.5 12 16.5 13.5V17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
       <a href="https://github.com/asuleym" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
-      <!-- LinkedIn: replace the URL with your profile and remove the comment marks.
-      <a href="https://www.linkedin.com/in/your-profile" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="8" r="1.3" fill="currentColor"/><path d="M8 11v6M12 17v-6M12 13.5c0-1.5 1-2.5 2.4-2.5S16.5 12 16.5 13.5V17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
-      -->
+      <a data-cv hidden href="cv.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)" title="CV (PDF)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 2.5V7h4.5M9 12h6.5M9 15.5h6.5M9 19h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">&copy; 2026 Arzu Su &middot; Last updated November 2026</div>
+  <div class="wrap">&copy; 2026 Arzu Suleymanova &middot; Last updated November 2026</div>
 </footer>
 
 <script>
@@ -340,7 +401,7 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
       navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id));
     });
   }, { rootMargin: '-40% 0px -55% 0px' });
-  ['about','news','research','projects','education'].forEach(id => {
+  ['about','news','publications','research','projects','education'].forEach(id => {
     const el = document.getElementById(id);
     if (el) sectionObserver.observe(el);
   });
@@ -350,9 +411,12 @@ footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-
   if (photo.complete) showPhoto(); else photo.addEventListener('load', showPhoto);
   photo.addEventListener('error', () => photo.remove());
 
-  const cvItem = document.getElementById('cv-link');
   fetch('cv.pdf', { method: 'HEAD' })
-    .then(r => { if (r.ok && !/text\/html/i.test(r.headers.get('content-type') || '')) cvItem.hidden = false; })
+    .then(r => {
+      if (r.ok && !/text\/html/i.test(r.headers.get('content-type') || '')) {
+        document.querySelectorAll('[data-cv]').forEach(el => { el.hidden = false; });
+      }
+    })
     .catch(() => {});
 }
 </script>
