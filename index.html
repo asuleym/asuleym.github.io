@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arzu Su</title>
+<meta name="description" content="Arzu Su: research on large language models, human-AI trust and clinical AI. Graduate Research Assistant at Kent State University.">
+<meta property="og:title" content="Arzu Su">
+<meta property="og:description" content="Research on large language models, human-AI trust and clinical AI.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b509ac'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+/* VOICE: a quiet academic homepage; whitespace first, one accent, nothing shouting
+   IDEA: the front sheet of a printed CV or faculty page
+   PICTURE: the portrait card beside the bio, then small drawn project plates
+   COLOUR and TYPE: white and near-black, magenta accent (teal at night); Roboto with light-weight titles
+   LAYOUT: slim sticky navbar, one 880px column, bio wraps the portrait, then news, research, projects, education, contact */
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#1c1c1d);--ink:light-dark(#1a1a1a,#e8e8e8);--mute:light-dark(#646464,#a6a6a6);
+  --line:light-dark(#e7e7e7,#353538);--soft:light-dark(#f6f5f7,#262628);--accent:light-dark(#b509ac,#2698ba);
+  --on-accent:light-dark(#ffffff,#0b1a1f);--nav:light-dark(rgb(255 255 255 / .9),rgb(28 28 29 / .9))}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 Roboto,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:880px;margin:0 auto;padding:0 max(4vw,18px)}
+
+/* navbar */
+.nav{position:sticky;top:0;z-index:10;background:var(--nav);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:4px;min-height:58px}
+.brand{font-size:1.2rem;font-weight:300;color:var(--ink);margin-right:auto;white-space:nowrap}
+.brand b{font-weight:700}
+.brand:hover{text-decoration:none;color:var(--accent)}
+.links{display:flex;list-style:none;margin:0;padding:0}
+.links a{display:block;padding:10px 11px;color:var(--ink);font-size:.97rem;border-radius:6px}
+.links a:hover{color:var(--accent);text-decoration:none}
+.links a.on{color:var(--accent);font-weight:500}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:0;background:none;color:var(--ink);border-radius:50%;cursor:pointer}
+.icon-btn:hover{color:var(--accent);background:var(--soft)}
+.icon-btn svg{width:20px;height:20px}
+.menu{display:none}
+.i-sun{display:none}
+:root[data-theme=dark] .i-sun{display:block}:root[data-theme=dark] .i-moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .i-sun{display:block}:root:not([data-theme=light]) .i-moon{display:none}}
+@media (max-width:720px){
+  .menu{display:grid}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:4px max(4vw,18px) 12px}
+  .links.open{display:flex}
+  .links a{padding:12px 2px;border-radius:0}
+}
+
+/* header + about */
+.hero{padding:clamp(34px,6vw,60px) 0 0}
+h1{font-weight:300;font-size:clamp(2.2rem,5.6vw,2.9rem);line-height:1.08;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 b{font-weight:700}
+.desc{color:var(--mute);margin:.55rem 0 0;font-size:1rem}
+.about{display:flow-root;padding:24px 0 4px}
+.about p{margin:0 0 1em}
+.about h3{font-size:1.08rem;font-weight:500;margin:1.5em 0 .45em}
+.profile{float:right;width:min(32%,250px);margin:6px 0 18px 34px;text-align:center}
+.pic{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:var(--soft);box-shadow:0 1px 2px rgb(0 0 0 / .08),0 10px 26px -10px rgb(0 0 0 / .32)}
+.pic svg,.pic img{position:absolute;inset:0;width:100%;height:100%}
+.pic img{object-fit:cover;opacity:0;transition:opacity .4s}
+.pic img.ok{opacity:1}
+.cap{font-size:.86rem;color:var(--mute);margin-top:10px;line-height:1.5}
+.chips{list-style:none;margin:0 0 1em;padding:0}
+.chips li{display:inline-block;margin:0 6px 8px 0;padding:5px 12px;border:1px solid var(--line);border-radius:99px;font-size:.92rem;line-height:1.4}
+@media (max-width:600px){.profile{float:none;width:min(62%,230px);margin:4px auto 24px}}
+
+/* sections */
+section{padding:30px 0 6px}
+h2{font-size:1.5rem;font-weight:400;color:var(--accent);margin:0 0 14px}
+h2 + h3,.sub-h{font-size:1.08rem;font-weight:500;margin:26px 0 8px}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:112px minmax(0,1fr);gap:18px;padding:11px 0;border-top:1px solid var(--line)}
+.rows li:last-child{border-bottom:1px solid var(--line)}
+.when{font-weight:500;white-space:nowrap;font-size:.95rem;padding-top:1px}
+.rows small{display:block;color:var(--mute);font-size:.93rem;line-height:1.5;margin-top:2px}
+@media (max-width:520px){.rows li{grid-template-columns:1fr;gap:2px}}
+
+.entry{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.abbr{align-self:start;text-align:center;padding:4px 6px;border-radius:4px;background:var(--accent);color:var(--on-accent);font-size:.8rem;font-weight:500;white-space:nowrap}
+.entry .t{font-weight:500;margin:0;line-height:1.45;font-size:1.05rem}
+.entry .meta{margin:3px 0 0;font-size:.95rem;font-style:italic;color:var(--mute)}
+.entry p.d{margin:10px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:.8rem;padding:2px 9px;border-radius:99px;background:var(--soft);color:var(--mute);white-space:nowrap}
+@media (max-width:520px){.entry{grid-template-columns:1fr;gap:8px}.abbr{justify-self:start;min-width:84px}}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;overflow:hidden;color:var(--ink);background:var(--bg);transition:transform .2s,box-shadow .2s}
+a.card:hover{text-decoration:none;transform:translateY(-3px);box-shadow:0 12px 30px -14px rgb(0 0 0 / .35)}
+.card svg{display:block;width:100%;height:auto;aspect-ratio:16/9}
+.card .body{flex:1;display:flex;flex-direction:column;padding:14px 16px 16px;border-top:1px solid var(--line)}
+.card h3{margin:0 0 2px;font-size:1.06rem;font-weight:500}
+.card .where{margin:0 0 8px;font-size:.86rem;color:var(--mute)}
+.nw{white-space:nowrap}
+.card p{margin:0 0 12px;color:var(--mute);font-size:.95rem;line-height:1.5}
+.card .tags{margin-top:auto}
+
+.skills{margin:18px 0 0;font-size:.97rem}
+.skills b{font-weight:500}
+
+.contact{text-align:center;padding:40px 0 10px}
+.contact p{margin:0;color:var(--mute)}
+.social{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin:12px 0 6px}
+.social a{width:50px;height:50px;display:grid;place-items:center;color:var(--ink);border-radius:50%}
+.social a:hover{color:var(--accent);background:var(--soft)}
+.social svg{width:26px;height:26px}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:.86rem;text-align:center;padding:18px 0 30px;margin-top:26px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#about"><b>Arzu</b> Su</a>
+    <ul class="links" id="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li id="cv-link" hidden><a href="cv.pdf" target="_blank" rel="noopener">CV</a></li>
+    </ul>
+    <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg>
+    </button>
+    <button class="icon-btn menu" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div id="about">
+    <header class="hero">
+      <h1><b>Arzu</b> Su</h1>
+      <p class="desc">Graduate Research Assistant, Kent State University</p>
+    </header>
+
+    <div class="about">
+      <figure class="profile">
+        <div class="pic">
+          <svg viewBox="0 0 200 250" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.26"/><stop offset="1" style="stop-color:var(--accent);stop-opacity:.05"/></linearGradient></defs>
+            <rect width="200" height="250" fill="url(#mg)"/>
+            <g fill="none" style="stroke:var(--accent)" stroke-opacity=".2" stroke-width="1.5"><circle cx="170" cy="30" r="55"/><circle cx="170" cy="30" r="85"/><circle cx="170" cy="30" r="115"/><circle cx="170" cy="30" r="145"/></g>
+            <text x="100" y="154" text-anchor="middle" font-family="Roboto, sans-serif" font-weight="300" font-size="76" style="fill:var(--accent)">AS</text>
+          </svg>
+          <!-- Upload a photo named profile.jpg next to this file and it replaces the initials automatically. -->
+          <img id="photo" src="profile.jpg" alt="Portrait of Arzu Su">
+        </div>
+        <figcaption class="cap">Kent State University<br><a href="https://github.com/asuleym">@asuleym</a> on GitHub</figcaption>
+      </figure>
+
+      <p>Hi, I'm Arzu. I study how people talk to AI systems, and what they leave out. At Kent State University I lead an IRB-approved interview study on self-censorship and AI adoption among English, Azerbaijani and Russian speakers: when and why people change or hold back what they type into a large language model.</p>
+      <p>I care most about what this means for medicine. A clinical decision-support tool can only work with the information it is given, so I want to understand how clinicians and patients decide what to share with AI, and how to build tools they can be honest with. I am applying to PhD programs to keep working on these questions.</p>
+
+      <h3>Research interests</h3>
+      <ul class="chips">
+        <li>LLMs and clinical decision support</li>
+        <li>AI and machine learning in medicine and ENT</li>
+        <li>Human-computer interaction</li>
+        <li>Algorithmic bias and AI self-censorship</li>
+        <li>Digital biomarkers and biomedical informatics</li>
+      </ul>
+
+      <h3>Before research</h3>
+      <p>I co-founded and lead Savadly, an EdTech company in Baku, and I work part-time as a data analyst at Yieldmo in Boston, labeling text, image and video ad data for machine learning. Since 2024 I have built AI apps with Sundai Club, a group of builders around MIT and Harvard who ship a new project most Sundays.</p>
+
+      <h3>Languages</h3>
+      <p>I trained as a translator and interpreter, and I speak Azerbaijani, English, Russian and Turkish. Moving between languages every day is a large part of why I study how people speak to machines.</p>
+    </div>
+  </div>
+
+  <section id="news" aria-labelledby="news-h">
+    <h2 id="news-h">News</h2>
+    <ul class="rows">
+      <li><span class="when">Nov 2026</span><span>Launched this website.</span></li>
+      <li><span class="when">Feb 2026</span><span>Joined Kent State University as a Graduate Research Assistant, leading a study on self-censorship and AI adoption across three languages.</span></li>
+      <li><span class="when">Jan 2025</span><span>Built <a href="https://github.com/asuleym/Greenlife">GreenLife</a>, an app that turns one idea into a three-panel comic about sustainable living.</span></li>
+      <li><span class="when">Sep 2024</span><span>Built ElevateHealth, a biological-age tracking app, at the MIT CSAIL Longevity Hack and presented it to longevity researchers.</span></li>
+      <li><span class="when">2024</span><span>Teaching assistant for Prof. Rem Koning's AI and innovation workshop at Harvard Business School.</span></li>
+      <li><span class="when">2024</span><span>Finished my M.S. in Information Technology at Southern New Hampshire University.</span></li>
+    </ul>
+  </section>
+
+  <section id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Research</h2>
+    <article class="entry">
+      <span class="abbr">Kent State</span>
+      <div>
+        <p class="t">Self-censorship and AI adoption across languages</p>
+        <p class="meta">Graduate Research Assistant &middot; Feb 2026 to present &middot; IRB-approved, in progress</p>
+        <p class="d">An interview study with English, Azerbaijani and Russian speakers about how they edit, soften or withhold what they tell large language models, and how that shapes trust in AI. I code the multilingual transcripts in NVivo, run thematic analysis, and analyze the quantitative data in R and SAS. I also run the study's consent process, data privacy and participant communication.</p>
+        <div class="tags"><span>Interviews</span><span>Thematic analysis</span><span>NVivo</span><span>R</span><span>SAS</span></div>
+      </div>
+    </article>
+
+    <h3 class="sub-h">Teaching and mentoring</h3>
+    <ul class="rows">
+      <li><span class="when">2024</span><span>Teaching assistant, AI and Innovation Workshop, Harvard Business School<small>With Prof. Rem Koning. Helped participants use agentic coding tools to prototype AI products.</small></span></li>
+      <li><span class="when">2024</span><span>AI and research mentor, C10Labs / LabCentral AI BioHub<small>Advised HeraHealth, a startup building an AI device that measures blood loss during childbirth, on data strategy and model design.</small></span></li>
+      <li><span class="when">2024 to now</span><span>Member and builder, Sundai Club<small>An AI builder community around MIT and Harvard.</small></span></li>
+    </ul>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h">Projects</h2>
+    <div class="projects">
+      <a class="card" href="https://github.com/AdamElitzur/ElevateHealth">
+        <svg viewBox="0 0 320 180" role="img" aria-label="Chart of biological age dropping below calendar age over time">
+          <rect width="320" height="180" style="fill:light-dark(#e7f0fb,#1a2532)"/>
+          <rect x="24" y="20" width="272" height="140" rx="10" style="fill:light-dark(#ffffff,#22303f)"/>
+          <g style="stroke:light-dark(#e3e8ef,#33465a)" stroke-width="1"><path d="M48 62H276M48 90H276M48 118H276M48 146H276"/></g>
+          <path d="M48 144L276 66" stroke="#9aaabd" stroke-width="2.5" stroke-dasharray="6 6" fill="none"/>
+          <path d="M48 144C100 128 130 114 170 110S240 102 276 98L276 146L48 146Z" fill="#2f7de1" opacity=".13"/>
+          <path d="M48 144C100 128 130 114 170 110S240 102 276 98" stroke="#2f7de1" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="276" cy="98" r="5" fill="#2f7de1"/>
+          <g transform="translate(58 40)"><circle r="10" fill="#e3edfb"/><path d="M1 -6A6 6 0 1 0 6 2A4.6 4.6 0 1 1 1 -6Z" fill="#2f7de1"/></g>
+          <g transform="translate(84 40)"><circle r="10" fill="#fde8e9"/><path d="M0 5L-5.5 -0.5A3.1 3.1 0 0 1 0 -4.2A3.1 3.1 0 0 1 5.5 -0.5Z" fill="#e5484d"/></g>
+          <g transform="translate(110 40)"><circle r="10" fill="#e3f5ea"/><ellipse rx="3.6" ry="6.2" transform="rotate(35)" fill="#30a46c"/></g>
+        </svg>
+        <div class="body">
+          <h3>ElevateHealth</h3>
+          <p class="where">MIT CSAIL Longevity Hack &middot; <span class="nw">Sep 2024</span></p>
+          <p>Estimates biological age from daily nutrition, sleep and activity data with machine learning models, and shows how habits move that number over time.</p>
+          <div class="tags"><span>Machine learning</span><span>Health data</span><span>Full-stack</span></div>
+        </div>
+      </a>
+      <article class="card">
+        <svg viewBox="0 0 320 180" role="img" aria-label="Points grouped into three clusters around a query point">
+          <rect width="320" height="180" style="fill:light-dark(#f1eefa,#221e2d)"/>
+          <circle cx="90" cy="68" r="42" fill="#7c5cff" opacity=".13"/><circle cx="222" cy="60" r="38" fill="#00a6a6" opacity=".15"/><circle cx="168" cy="134" r="36" fill="#f08c00" opacity=".15"/>
+          <g style="stroke:var(--ink)" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"><path d="M160 92L110 72M160 92L156 122M160 92L204 50"/></g>
+          <g fill="#7c5cff"><circle cx="70" cy="58" r="4.5"/><circle cx="84" cy="46" r="4.5"/><circle cx="100" cy="54" r="4.5"/><circle cx="110" cy="72" r="4.5"/><circle cx="92" cy="82" r="4.5"/><circle cx="76" cy="80" r="4.5"/><circle cx="96" cy="66" r="4.5"/><circle cx="62" cy="70" r="4.5"/></g>
+          <g fill="#00a6a6"><circle cx="204" cy="50" r="4.5"/><circle cx="222" cy="42" r="4.5"/><circle cx="238" cy="54" r="4.5"/><circle cx="232" cy="74" r="4.5"/><circle cx="212" cy="70" r="4.5"/><circle cx="222" cy="58" r="4.5"/><circle cx="246" cy="68" r="4.5"/></g>
+          <g fill="#f08c00"><circle cx="156" cy="122" r="4.5"/><circle cx="172" cy="116" r="4.5"/><circle cx="186" cy="128" r="4.5"/><circle cx="178" cy="146" r="4.5"/><circle cx="160" cy="144" r="4.5"/><circle cx="168" cy="132" r="4.5"/><circle cx="148" cy="134" r="4.5"/></g>
+          <path d="M160 83L169 92L160 101L151 92Z" style="fill:var(--ink)"/>
+        </svg>
+        <div class="body">
+          <h3>Mantis AI</h3>
+          <p class="where">Sundai Club, MIT &middot; <span class="nw">2024</span></p>
+          <p>Groups text, graph and sequence data with semantic embeddings and clustering, then answers questions over it with retrieval-augmented generation and vector search.</p>
+          <div class="tags"><span>Embeddings</span><span>Clustering</span><span>RAG</span></div>
+        </div>
+      </article>
+      <a class="card" href="https://github.com/asuleym/Greenlife">
+        <svg viewBox="0 0 320 180" role="img" aria-label="Three comic panels: a sun, a sprout, a tree">
+          <rect width="320" height="180" style="fill:light-dark(#e2f4e8,#1d3326)"/>
+          <g stroke="#1f3b2c" stroke-width="2.5" fill="#fff"><rect x="22" y="32" width="86" height="116" rx="6"/><rect x="117" y="32" width="86" height="116" rx="6"/><rect x="212" y="32" width="86" height="116" rx="6"/></g>
+          <g fill="#bfe8cf"><rect x="24" y="118" width="82" height="28"/><rect x="119" y="118" width="82" height="28"/><rect x="214" y="118" width="82" height="28"/></g>
+          <circle cx="78" cy="68" r="14" fill="#ffc845"/>
+          <g stroke="#ffc845" stroke-width="2.5" stroke-linecap="round"><path d="M78 46v-6M78 96v-6M56 68h-6M106 68h-6M62 52l-4-4M94 84l4 4M62 84l-4 4M94 52l4-4"/></g>
+          <rect x="30" y="40" width="34" height="14" rx="7" fill="#fff" stroke="#1f3b2c" stroke-width="1.5"/>
+          <path d="M160 119V96" stroke="#2e9e5b" stroke-width="3.5" stroke-linecap="round"/>
+          <ellipse cx="150" cy="96" rx="11" ry="5.5" transform="rotate(-30 150 96)" fill="#2e9e5b"/>
+          <ellipse cx="170" cy="90" rx="12" ry="6" transform="rotate(25 170 90)" fill="#4cbb78"/>
+          <rect x="251" y="92" width="9" height="28" rx="2" fill="#8a5a3b"/>
+          <circle cx="255" cy="78" r="21" fill="#2e9e5b"/><circle cx="240" cy="90" r="13" fill="#3aad69"/><circle cx="271" cy="90" r="13" fill="#3aad69"/>
+          <rect x="220" y="40" width="70" height="10" rx="2" fill="#eef3f0"/>
+        </svg>
+        <div class="body">
+          <h3>GreenLife</h3>
+          <p class="where">Personal project &middot; <span class="nw">Jan 2025</span></p>
+          <p>Type an idea and get a three-panel comic about sustainable living. GPT-4o writes the story and captions, and Replicate draws each panel.</p>
+          <div class="tags"><span>Next.js</span><span>TypeScript</span><span>GPT-4o</span><span>Replicate</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="education-h">
+    <h2 id="education-h">Education</h2>
+    <ul class="rows">
+      <li><span class="when">2024</span><span>M.S., Information Technology, Southern New Hampshire University<small>Concentration in Computer and Information Science</small></span></li>
+      <li><span class="when">2022</span><span>Graduate Certificate, Illinois State University<small>Project Management in Technology and System Quality Analytics</small></span></li>
+      <li><span class="when">2014</span><span>B.S., Translator-Interpreter, Odlar Yurdu University, Baku</span></li>
+    </ul>
+    <p class="skills"><b>Skills:</b> Python, R, SAS, SQL, JavaScript (Next.js) &middot; NVivo, Tableau, Power BI &middot; GCP, AWS Certified Cloud Practitioner &middot; Certified Scrum Product Owner</p>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Get in touch</h2>
+    <p>I'm happy to talk about research, collaborations and PhD programs.</p>
+    <div class="social">
+      <!-- Email: put your address in BOTH places below and remove the comment marks around the line.
+      <a href="mailto:you@example.com" aria-label="Email you@example.com" title="you@example.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+      -->
+      <a href="https://github.com/asuleym" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
+      <!-- LinkedIn: replace the URL with your profile and remove the comment marks.
+      <a href="https://www.linkedin.com/in/your-profile" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="8" r="1.3" fill="currentColor"/><path d="M8 11v6M12 17v-6M12 13.5c0-1.5 1-2.5 2.4-2.5S16.5 12 16.5 13.5V17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Arzu Su &middot; Last updated November 2026</div>
+</footer>
+
+<script>
+{
+  const root = document.documentElement;
+  const store = {
+    get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+    set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  };
+  const sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const current = () => root.dataset.theme || (sysDark.matches ? 'dark' : 'light');
+  document.getElementById('theme').addEventListener('click', () => {
+    const next = current() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    store.set('theme', next);
+  });
+
+  const menu = document.getElementById('menu');
+  const links = document.getElementById('links');
+  const closeMenu = () => { links.classList.remove('open'); menu.setAttribute('aria-expanded','false'); };
+  menu.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  links.addEventListener('click', e => { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  const navLinks = [...links.querySelectorAll('a[href^="#"]')];
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + en.target.id));
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  ['about','news','research','projects','education'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+
+  const photo = document.getElementById('photo');
+  const showPhoto = () => { if (photo.naturalWidth) photo.classList.add('ok'); };
+  if (photo.complete) showPhoto(); else photo.addEventListener('load', showPhoto);
+  photo.addEventListener('error', () => photo.remove());
+
+  const cvItem = document.getElementById('cv-link');
+  fetch('cv.pdf', { method: 'HEAD' })
+    .then(r => { if (r.ok && !/text\/html/i.test(r.headers.get('content-type') || '')) cvItem.hidden = false; })
+    .catch(() => {});
+}
+</script>
+</body>
+</html>
